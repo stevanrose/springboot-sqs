@@ -1,8 +1,0 @@
-cloud:
-  aws:
-    credentials:
-      accessKey: ACCESS_KEY
-      secretKey: SECRET_KEY
-      instanceProfile: true
-    region:
-      static: region
