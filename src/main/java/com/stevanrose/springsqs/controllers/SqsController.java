@@ -21,13 +21,13 @@ public class SqsController {
 
     @PostMapping(value = "/send")
     @ResponseStatus(HttpStatus.OK)
-    public void sendMessageToQueue(@RequestBody Message message) {
+    public void send(@RequestBody Message message) {
         logger.info("Sending message {} to SQS queue", message);
         queueMessagingTemplate.convertAndSend(QUEUE_NAME, message);
     }
 
     @SqsListener(QUEUE_NAME)
-    private void receiveMessageFromQueue(Message message) {
+    private void receive(Message message) {
         logger.info("Received message {} from SQS Queue", message);
     }
 
